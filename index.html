@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Floating frame</title>
+
+	<style>
+		table {
+			border: 1px solid gray;
+			border-spacing: 0px;
+			width: 100%;
+		}
+
+		td {
+			border: 1px solid gray;
+		}
+
+		.catsGalleryTR {
+			text-align: center;
+			font-family: sans-serif;
+			font-weight: bold;
+		}
+
+		.frame {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 300px;
+			margin: 10px;
+		}
+
+		.frame img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		td {
+			text-align: center;
+		}
+	</style>
+
+</head>
+
+<body>
+	<!--empty table of 3 rows, 6 columns -->
+	<table>
+		<!-- 1 row -->
+		<tr>
+			<td class="catsGalleryTR" colspan="6">CATS GALLERY</td>
+		</tr>
+		<!-- 2 row -->
+		<tr>
+			<td colspan="6">
+				<div class="frame">
+					<img id="mainImage" src="icons/cat_tied_256.png" alt="Main image">
+				</div>
+			</td>
+		</tr>
+		<!-- 3 row -->
+		<tr>
+			<td><img src="icons/cat_tied_64.png" onclick="changeImage('icons/cat_tied_256.png')" alt="Cat tied"></td>
+			<td><img src="icons/cat_eyes_64.png" onclick="changeImage('icons/cat_eyes_256.png')" alt="Cat eyes"></td>
+			<td><img src="icons/cat_purr_64.png" onclick="changeImage('icons/cat_purr_256.png')" alt="Cat purr"></td>
+			<td><img src="icons/cat_cage_64.png" onclick="changeImage('icons/cat_cage_256.png')" alt="Cat cage"></td>
+			<td><img src="icons/cat_clean_64.png" onclick="changeImage('icons/cat_clean_256.png')" alt="Cat clean"></td>
+			<td><img src="icons/cat_box_64.png" onclick="changeImage('icons/cat_box_256.png')" alt="Cat box"></td>
+		</tr>
+	</table>
+
+	<script>
+		function changeImage(src) {
+			document.getElementById("mainImage").src = src;
+		}
+	</script>
+</body>
+
+</html>
